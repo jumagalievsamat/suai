@@ -1,9 +1,11 @@
+import math
 count = 1
 each = ('test', '60', 15, '30', '1')
 
 def output(each, count):
+    count = str(count)
     print('_' * 65)
-    s_1 = '|' + str(count) + ' ' * (abs(len(str(count) - 4)) + '|'
+    s_1 = '|' + count + ' ' * (abs(len(count) - 4)) + '|'
     s_2 = each[0] + ' ' * abs(len(each[0]) - 30) + '|'
     output_array = f'{s_1}{s_2}'
     for i in range(1, len(each)):
