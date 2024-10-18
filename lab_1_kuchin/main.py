@@ -1,24 +1,16 @@
 from conftest import *
 
 
-# output value
-cpu = ''
-done = ''
-tasks_list = [('count', 'tasks', 'time complited', 'time start', 'interval', 'prio')]
+driver = webdriver.Edge()
+driver.get('https://pro.guap.ru')
+xpath('//a[text()="Кабинет"]/parent::li').click()
+xpath('//input[@id="username"]').send_keys('camat2004@yandex.ru')
+xpath('//input[@id="password"]').send_keys('11021982')
+xpath('//input[@name="login"]').click()
+driver.get('https://lms.guap.ru/login/index.php')
+xpath('//img[@class="eta-login"]').click()
+time.sleep(10)
 
 
-menu = True
-while menu:
-    action = input('1 - Запуск и ввод задачи\n2 - Показать очередь и выполненные задачи\n3 - autotest\n0 - выход\nВведите значение: ')
-    match action:
-        case '1':
-            input_tasks(tasks_list)
-        case '2':
-            for each in tasks_list:
-                output_tasks(each)
-        case '3':
-            print('еще не готово')
-        case '0':
-            break
 
 
