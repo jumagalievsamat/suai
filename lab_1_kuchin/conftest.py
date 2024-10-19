@@ -5,7 +5,10 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-def xpath(xpath, timeout=10):
+driver = webdriver.Edge()
+
+
+def xpath(xpath, timeout=5):
     global driver
     element = WebDriverWait(driver, timeout).until(
         EC.element_to_be_clickable(
@@ -16,7 +19,7 @@ def xpath(xpath, timeout=10):
     return element
 
 
-def if_element_is_displayed(xpath, timeout=10):
+def if_element_is_displayed(xpath, timeout=5):
     global driver
     try:
         WebDriverWait(driver, timeout).until(
@@ -27,6 +30,7 @@ def if_element_is_displayed(xpath, timeout=10):
         return True
     except:
         return False
+
 
 
 
